@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f96b05bff0bf3dd47b6aa20fe7bdcee6, type: 3}
+  m_Name: JensYakic
+  m_EditorClassIdentifier: 
+  workerIcon: {fileID: 3929065430116362838, guid: c465998013154d64d8060456e9576977, type: 3}
+  workerName: Jens Yakic
+  workerJob: 3
+  workerSkill: 2
+  workerWage: 200
+  workerCoalProduction: 0
+  workerHappiness: 100

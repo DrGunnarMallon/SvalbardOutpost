@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f96b05bff0bf3dd47b6aa20fe7bdcee6, type: 3}
+  m_Name: Jan Dahl
+  m_EditorClassIdentifier: 
+  workerIcon: {fileID: 953801708406510308, guid: 93718b6666e442a4ab77c8ccbd583193, type: 3}
+  workerName: Jan Dahl
+  workerJob: 1
+  workerSkill: 2
+  workerWage: 15
+  workerCoalProduction: 0
+  workerHappiness: 100

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8602fa56174d0e3409ec970dfd080957, type: 3}
+  m_Name: 1907-02-13-Severe-Arctic-Storm
+  m_EditorClassIdentifier: 
+  year: 1900
+  month: 7
+  day: 13
+  eventName: Severe Arctic Storm
+  description: A violent storm disrupts early operations and damages infrastructure,
+    forcing the outpost to improve its building techniques.
+  coalEffect: 0
+  foodEffect: 0
+  toolsEffect: 0

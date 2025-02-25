@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f96b05bff0bf3dd47b6aa20fe7bdcee6, type: 3}
+  m_Name: LuigiBarone
+  m_EditorClassIdentifier: 
+  workerIcon: {fileID: 4102512502849196173, guid: bddf683efa2b1cc4695842d6fb04ee1d, type: 3}
+  workerName: Luigi Barone
+  workerJob: 0
+  workerSkill: 0
+  workerWage: 1
+  workerCoalProduction: 1
+  workerHappiness: 100

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f96b05bff0bf3dd47b6aa20fe7bdcee6, type: 3}
+  m_Name: KnutRavnsen
+  m_EditorClassIdentifier: 
+  workerIcon: {fileID: 3675770945023257640, guid: a2132a5de72920a48af4ad72463f583d, type: 3}
+  workerName: Knut Ravnsen
+  workerJob: 0
+  workerSkill: 1
+  workerWage: 4
+  workerCoalProduction: 3
+  workerHappiness: 100
