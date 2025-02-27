@@ -3700,6 +3700,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Markets>k__BackingField: {fileID: 11400000, guid: 6872b7adefc27164ba4948d8ab334f2b, type: 2}
+  <TradePanel>k__BackingField: {fileID: 2082343886}
 --- !u!1 &1167398396
 GameObject:
   m_ObjectHideFlags: 0
@@ -3979,7 +3980,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdfd045fd0a03914ead17679b6cd5706, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  secondsPerDay: 2
+  secondsPerDay: 1
 --- !u!4 &1174575233
 Transform:
   m_ObjectHideFlags: 0
@@ -4624,7 +4625,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1356139103}
   m_OnClick:
     m_PersistentCalls:
@@ -6548,7 +6549,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1954519454}
   m_OnClick:
     m_PersistentCalls:
@@ -9085,7 +9086,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1998976461}
   m_OnClick:
     m_PersistentCalls:

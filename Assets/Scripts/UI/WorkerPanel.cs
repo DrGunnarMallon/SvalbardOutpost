@@ -10,6 +10,7 @@ public class WorkerPanel : MonoBehaviour
         GameObject workerItemGO = Instantiate(workerItemPrefab, contentContainer, false);
         Worker worker = workerItemGO.GetComponent<Worker>();
         worker?.Initialize(workerData);
+
         if (workerData.workerSkill == SkillLevel.Expert)
         {
             worker.DisableTrainButton();

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: London
   m_EditorClassIdentifier: 
   marketName: London
-  marketStock: 0
+  marketStock: 7
   marketPrice: 2.4
   marketShippingTime: 10
   marketShippingCost: 110

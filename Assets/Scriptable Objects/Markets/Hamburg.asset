@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Hamburg
   m_EditorClassIdentifier: 
   marketName: Hamburg
-  marketStock: 0
+  marketStock: 21
   marketPrice: 2.64
   marketShippingTime: 12
   marketShippingCost: 100

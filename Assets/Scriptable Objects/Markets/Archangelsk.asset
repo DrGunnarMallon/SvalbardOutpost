@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Archangelsk
   m_EditorClassIdentifier: 
   marketName: Archangelsk
-  marketStock: 0
+  marketStock: 10
   marketPrice: 1.2
   marketShippingTime: 6
   marketShippingCost: 60

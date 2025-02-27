@@ -11,7 +11,6 @@ public class EventManager : MonoBehaviour
     [Header("Historical Events Collection")]
     public HistoricalEventCollectionSO historicalEventsCollection;
 
-    // Dictionary to lookup events by date
     private Dictionary<DateTime, List<HistoricalEventDataSO>> historicalEventsDict = new Dictionary<DateTime, List<HistoricalEventDataSO>>();
 
     private float eventInterval = 30f;
@@ -51,14 +50,10 @@ public class EventManager : MonoBehaviour
         {
             List<HistoricalEventDataSO> eventsForDate = historicalEventsDict[newDate];
 
-            // In case there are multiple events for the same date
             foreach (HistoricalEventDataSO historicalEvent in eventsForDate)
             {
                 ApplyHistoricalEvent(historicalEvent);
             }
-
-            // Remove them if you only want them to happen once
-            // historicalEventsDict.Remove(newDate);
         }
     }
 

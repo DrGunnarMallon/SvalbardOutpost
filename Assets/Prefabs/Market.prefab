@@ -432,7 +432,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2168768846520041404}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1787739960419075194}
+        m_TargetAssemblyTypeName: MarketUIElement, Assembly-CSharp
+        m_MethodName: DecreaseTransferAmount
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: -1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &449362288209067704
 GameObject:
   m_ObjectHideFlags: 0
@@ -1002,6 +1014,7 @@ MonoBehaviour:
   marketPriceText: {fileID: 4100717206883372409}
   marketShippingTimeText: {fileID: 3255096456135283002}
   marketShippingCostText: {fileID: 5877088685000939902}
+  transferAmountText: {fileID: 6897712569912954590}
 --- !u!1 &1463478028027118013
 GameObject:
   m_ObjectHideFlags: 0
@@ -1609,7 +1622,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2552975776564404710}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1787739960419075194}
+        m_TargetAssemblyTypeName: MarketUIElement, Assembly-CSharp
+        m_MethodName: DecreaseTransferAmount
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: -100
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2164609654243523829
 GameObject:
   m_ObjectHideFlags: 0
@@ -2947,7 +2972,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2541367971807937580}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1787739960419075194}
+        m_TargetAssemblyTypeName: MarketUIElement, Assembly-CSharp
+        m_MethodName: IncreaseTransferAmount
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4601710243111290731
 GameObject:
   m_ObjectHideFlags: 0
@@ -3068,7 +3105,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8607643262862386915}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1787739960419075194}
+        m_TargetAssemblyTypeName: MarketUIElement, Assembly-CSharp
+        m_MethodName: DecreaseTransferAmount
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: -10
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4605997097252333307
 GameObject:
   m_ObjectHideFlags: 0
@@ -3189,7 +3238,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1427489575252138924}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1787739960419075194}
+        m_TargetAssemblyTypeName: MarketUIElement, Assembly-CSharp
+        m_MethodName: IncreaseTransferAmount
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4800600813372225177
 GameObject:
   m_ObjectHideFlags: 0
@@ -3895,7 +3956,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7835467949320107996}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1787739960419075194}
+        m_TargetAssemblyTypeName: MarketUIElement, Assembly-CSharp
+        m_MethodName: ConfirmTransfer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7921008801803584736
 GameObject:
   m_ObjectHideFlags: 0
@@ -4154,7 +4227,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 683257367837340310}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1787739960419075194}
+        m_TargetAssemblyTypeName: MarketUIElement, Assembly-CSharp
+        m_MethodName: IncreaseTransferAmount
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 100
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8564685970217636358
 GameObject:
   m_ObjectHideFlags: 0
