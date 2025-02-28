@@ -14,16 +14,9 @@ public class MarketSO : ScriptableObject
         marketStock += amount;
     }
 
-    public float SellStock(int amount)
+    public void RemoveStock(int amount)
     {
-        if (amount > marketStock)
-        {
-            amount = marketStock;
-        }
-
-        float salesValue = amount * marketPrice;
-        marketStock -= amount;
-        return salesValue;
+        marketStock = Mathf.Max(marketStock - amount, 0);
     }
 
     public void ResetStock()

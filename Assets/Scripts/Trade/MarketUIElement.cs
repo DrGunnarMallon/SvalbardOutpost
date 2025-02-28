@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class MarketUIElement : MonoBehaviour
@@ -8,94 +9,151 @@ public class MarketUIElement : MonoBehaviour
     [SerializeField] private TMPro.TextMeshProUGUI marketShippingTimeText;
     [SerializeField] private TMPro.TextMeshProUGUI marketShippingCostText;
     [SerializeField] private TMPro.TextMeshProUGUI transferAmountText;
+    [SerializeField] private TMPro.TextMeshProUGUI sellAmountText;
 
-    private MarketSO market;
-    private int transferAmount;
+    [SerializeField] private ShipmentUI shipmentUI;
 
-    public void Initialize(MarketSO market)
+    private MarketData market;
+    private int transferAmount = 0;
+    private int sellAmount = 0;
+
+    public void Initialize(MarketData market)
     {
         this.market = market;
         market.ResetStock();
 
-        marketNameText.text = market.marketName;
-        marketStockText.text = market.marketStock.ToString();
-        marketPriceText.text = market.marketPrice.ToString();
-        marketShippingTimeText.text = market.marketShippingTime.ToString();
-        marketShippingCostText.text = market.marketShippingCost.ToString();
+        marketNameText.text = market.MarketName;
+        marketStockText.text = market.MarketStock.ToString();
+        marketPriceText.text = market.MarketPrice.ToString("F2");
+        marketShippingTimeText.text = market.MarketShippingTime.ToString();
+        marketShippingCostText.text = market.MarketShippingCost.ToString();
         transferAmountText.text = "0";
+        sellAmountText.text = "0";
+
+        if (shipmentUI != null)
+            shipmentUI.gameObject.SetActive(false);
 
         GameManager.Instance.TradeManager.OnMarketStockChanged += OnMarketStockChanged;
+        GameManager.Instance.TradeManager.OnMarketPriceChanged += OnMarketPriceChanged;
     }
 
-    private void Destroy()
+    private void OnDestroy()
     {
         GameManager.Instance.TradeManager.OnMarketStockChanged -= OnMarketStockChanged;
+        GameManager.Instance.TradeManager.OnMarketPriceChanged -= OnMarketPriceChanged;
     }
 
-    public void IncreaseTransferAmount(int amount)
+    public void ChangeTransferAmount(int amount)
     {
-        transferAmount += amount;
+        if (amount > 0)
+        {
+            int availableCoal = GameManager.Instance.ResourceManager.Coal;
+            if (availableCoal < amount) return;
+
+            GameManager.Instance.ResourceManager.UseCoal(amount);
+            transferAmount += amount;
+        }
+        else
+        {
+            int decrease = Mathf.Min(Mathf.Abs(amount), transferAmount);
+            transferAmount -= decrease;
+            GameManager.Instance.ResourceManager.AddCoal(decrease);
+        }
         transferAmountText.text = transferAmount.ToString();
     }
 
-    public void DecreaseTransferAmount(int amount)
+    public void ChangeSellAmount(int amount)
     {
-        transferAmount = Mathf.Max(transferAmount - amount, 0);
-        transferAmountText.text = transferAmount.ToString();
+        if (amount > 0)
+        {
+            int availableStock = market.MarketStock;
+            if (availableStock < amount) return;
+
+            market.RemoveStock(amount);
+            sellAmount += amount;
+        }
+        else
+        {
+            int decrease = Mathf.Min(Mathf.Abs(amount), sellAmount);
+            Debug.Log($"Decrease: {decrease}");
+            sellAmount -= decrease;
+            market.AddStock(decrease);
+        }
+        marketStockText.text = market.MarketStock.ToString();
+        sellAmountText.text = sellAmount.ToString();
     }
 
     public void ConfirmTransfer()
     {
         if (transferAmount > 0)
         {
-            Shipment newShipment = new Shipment(market, transferAmount, GameManager.Instance.TimeManager.currentDate, market.marketShippingTime);
+            if (GameManager.Instance.TradeManager.HasActiveShipment(market)) { return; }
+
+            Shipment newShipment = new Shipment(market, transferAmount, GameManager.Instance.TimeManager.CurrentDate, market.MarketShippingTime);
             GameManager.Instance.TradeManager.AddShipping(newShipment);
-            GameManager.Instance.ResourceManager.UseMoney(market.marketShippingCost);
+            GameManager.Instance.ResourceManager.UseMoney(market.MarketShippingCost);
             transferAmount = 0;
             transferAmountText.text = "0";
         }
     }
 
-    private void OnMarketStockChanged(MarketSO ujpdatedMarket)
+    public void ConfirmSale()
     {
-        if (market == ujpdatedMarket)
+        if (sellAmount > 0)
         {
-            marketStockText.text = market.marketStock.ToString();
+            float salesValue = sellAmount * market.MarketPrice;
+            GameManager.Instance.ResourceManager.AddMoney(Mathf.RoundToInt(salesValue));
+            sellAmount = 0;
+            sellAmountText.text = "0";
         }
     }
 
-    // public void ChangeTransferAmount(int amount)
-    // {
-    //     int availableCoal = GameManager.Instance.ResourceManager.Coal;
+    public void CancelTransfer()
+    {
+        GameManager.Instance.ResourceManager.AddCoal(transferAmount);
+        transferAmount = 0;
+        transferAmountText.text = "0";
+    }
 
-    //     if (availableCoal < amount) return;
+    public void CancelSale()
+    {
+        market.AddStock(sellAmount);
+        sellAmount = 0;
+        sellAmountText.text = "0";
+    }
 
-    //     GameManager.Instance.ResourceManager.UseCoal(amount);
+    private void OnMarketStockChanged(MarketData updatedMarket)
+    {
+        if (market == updatedMarket)
+        {
+            marketStockText.text = market.MarketStock.ToString();
+        }
+    }
 
-    //     transferAmount += amount;
-    //     if (transferAmount < 0)
-    //     {
-    //         transferAmount = 0;
-    //     }
-    //     transferAmountText.text = transferAmount.ToString();
-    // }
+    private void OnMarketPriceChanged(MarketData updatedMarket)
+    {
+        if (market == updatedMarket)
+        {
+            marketPriceText.text = market.MarketPrice.ToString("F2");
+            marketShippingCostText.text = market.MarketShippingCost.ToString();
+            marketShippingTimeText.text = market.MarketShippingTime.ToString();
+        }
+    }
 
-    // public void ConfirmTransfer()
-    // {
-    //     if (transferAmount > 0)
-    //     {
-    //         GameManager.Instance.TradeManager.AddShipping(new Shipment(market, transferAmount, GameManager.Instance.TimeManager.currentDate, market.marketShippingTime));
-    //         GameManager.Instance.ResourceManager.UseMoney(market.marketShippingCost);
-    //         transferAmount = 0;
-    //         transferAmountText.text = "0";
-    //     }
-    // }
-
-    // private void OnMarketStockChanged(MarketSO market)
-    // {
-    //     if (this.market == market)
-    //     {
-    //         marketStockText.text = market.marketStock.ToString();
-    //     }
-    // }
+    private void Update()
+    {
+        if (shipmentUI != null)
+        {
+            Shipment shipment = GameManager.Instance.TradeManager.GetActiveShipment(market);
+            if (shipment != null)
+            {
+                shipmentUI.gameObject.SetActive(true);
+                shipmentUI.UpdateIndicator(shipment.TotalShippingTime, shipment.ShippingTime);
+            }
+            else
+            {
+                shipmentUI.gameObject.SetActive(false);
+            }
+        }
+    }
 }

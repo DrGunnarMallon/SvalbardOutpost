@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f96b05bff0bf3dd47b6aa20fe7bdcee6, type: 3}
   m_Name: MishaFlis
   m_EditorClassIdentifier: 
-  workerIcon: {fileID: 3675770945023257640, guid: a2132a5de72920a48af4ad72463f583d, type: 3}
+  workerIcon: {fileID: 5630551893289246203, guid: 2327a896f53380542b5e8e161ecf37c0, type: 3}
   workerName: Misha Flis
   workerJob: 0
   workerSkill: 0
   workerWage: 2
   workerCoalProduction: 1
-  workerHappiness: 100
+  workerReliability: 0
+  workerDateAvailable: 1900-01-01

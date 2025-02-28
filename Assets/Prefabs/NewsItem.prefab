@@ -115,9 +115,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a19be6dccc0c7e64cbf1956fb9fbfc59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  icon: {fileID: 394382247001292601}
   dateText: {fileID: 5589042939718982793}
   titleText: {fileID: 7462780142371477696}
   descriptionText: {fileID: 448092810701859080}
+  historicalEventIcon: {fileID: -5993379790611632000, guid: 0a44a9b8cfd289d48b3364397446013c, type: 3}
+  tradeEventIcon: {fileID: 6115779739247619730, guid: f614a8142cc32094cbaefb5d7fe705b5, type: 3}
 --- !u!1 &1901684431383934751
 GameObject:
   m_ObjectHideFlags: 0

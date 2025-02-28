@@ -15,9 +15,6 @@ MonoBehaviour:
   year: 1900
   month: 1
   day: 18
-  eventName: Early Coal Discovery
-  description: Prospectors first identify rich coal seams along Svalbard's coast,
-    sparking interest in resource extraction.
+  <EventName>k__BackingField: Test
+  <EventDescription>k__BackingField: Testing the system
   coalEffect: 0
-  foodEffect: 0
-  toolsEffect: 0

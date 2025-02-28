@@ -31,4 +31,16 @@ public class ShippingService
             activeShipments.Remove(shipment);
         }
     }
+
+    // Check if the given market already has an active shipment.
+    public bool HasActiveShipment(MarketData market)
+    {
+        return activeShipments.Exists(s => s.Market == market);
+    }
+
+    // Retrieve the active shipment for the given market (if any).
+    public Shipment GetActiveShipment(MarketData market)
+    {
+        return activeShipments.Find(s => s.Market == market);
+    }
 }

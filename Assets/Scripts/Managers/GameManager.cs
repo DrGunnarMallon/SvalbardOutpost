@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     [field: SerializeField] public TimeManager TimeManager { get; private set; }
     [field: SerializeField] public Transform Player { get; private set; }
     [field: SerializeField] public AudioManager AudioManager { get; private set; }
-    [field: SerializeField] public WorkersManager WorkerManager { get; private set; }
+    [field: SerializeField] public WorkerManager WorkerManager { get; private set; }
     [field: SerializeField] public TradeManager TradeManager { get; private set; }
 
     private IGameState currentState;

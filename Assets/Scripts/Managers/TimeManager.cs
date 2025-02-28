@@ -4,7 +4,10 @@ using UnityEngine;
 public class TimeManager : MonoBehaviour
 {
     public event Action<DateTime> OnDayChanged;
-    public DateTime currentDate { get; private set; } = new DateTime(1900, 1, 1);
+    public event Action<DateTime> OnMonthChanged;
+    public event Action<DateTime> OnYearChanged;
+
+    public DateTime CurrentDate { get; private set; } = new DateTime(1900, 1, 1);
 
     [SerializeField] float secondsPerDay = 1f;
 
@@ -16,9 +19,20 @@ public class TimeManager : MonoBehaviour
 
         if (dayTimer > secondsPerDay)
         {
-            currentDate = currentDate.AddDays(1);
+            CurrentDate = CurrentDate.AddDays(1);
             dayTimer = 0f;
-            OnDayChanged?.Invoke(currentDate);
+
+            OnDayChanged?.Invoke(CurrentDate);
+
+            if (CurrentDate.Day == 1)
+            {
+                OnMonthChanged?.Invoke(CurrentDate);
+            }
+
+            if (CurrentDate.Month == 1 && CurrentDate.Day == 1)
+            {
+                OnYearChanged?.Invoke(CurrentDate);
+            }
         }
     }
 }

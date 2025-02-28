@@ -18,4 +18,5 @@ MonoBehaviour:
   workerSkill: 0
   workerWage: 2
   workerCoalProduction: 1
-  workerHappiness: 100
+  workerReliability: 0
+  workerDateAvailable: 1900-01-01
